@@ -1,0 +1,17 @@
+{
+  "name": "@hormesis/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "migrate": "supabase db push",
+    "reset": "supabase db reset",
+    "start": "supabase start",
+    "stop": "supabase stop"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.2"
+  }
+}

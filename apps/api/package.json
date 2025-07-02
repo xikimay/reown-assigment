@@ -1,0 +1,26 @@
+{
+  "name": "@hormesis/api",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/types.ts",
+    "./api/*": "./api/*"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:local": "tsc",
+    "dev:local": "npx vercel dev --local-config vercel.json",
+    "clean": "find . -name '*.js' -not -path './node_modules/*' -not -path './dist/*' -delete",
+    "check-types": "tsc --noEmit",
+    "deploy": "npm run build:local && npx vercel --prod && npm run clean"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.2",
+    "@vercel/edge-config": "^1.4.0"
+  }
+}

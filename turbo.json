@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["NEXT_PUBLIC_API_BASE_URL"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": ["NEXT_PUBLIC_API_BASE_URL"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "deploy": {
+      "dependsOn": ["^check-types", "^deploy", "^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {}
+  }
+}

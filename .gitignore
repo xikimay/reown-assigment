@@ -1,0 +1,7 @@
+.vercel
+node_modules/
+.turbo
+.env
+apps/web/.next
+packages/database/dist
+.env*.local
